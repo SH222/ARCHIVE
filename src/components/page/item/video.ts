@@ -1,22 +1,22 @@
 import { BaseComponent } from "./../component.js";
 export class VideoComponent extends BaseComponent<HTMLElement> {
-  constructor(title: string, url: string) {
+  constructor(title: string, url: string, text: string) {
     super(`<section class="video">
             <div class="video__player">
               <iframe class="video__iframe"></iframe>
             </div>
             <h3 class="page-item__title video__title"></h3>
+            <p class="page-item__text video__text"></p>
           </section>`);
 
-    const iframe = this.element.querySelector(
-      ".video__iframe"
-    )! as HTMLIFrameElement;
+    const iframe = this.element.querySelector(".video__iframe")! as HTMLIFrameElement;
     iframe.src = this.convertToEmbeddedURL(url);
 
-    const videoTitle = this.element.querySelector(
-      ".video__title"
-    )! as HTMLHeadingElement;
+    const videoTitle = this.element.querySelector(".video__title")! as HTMLHeadingElement;
     videoTitle.textContent = title;
+
+    const videoText = this.element.querySelector(".video__text")! as HTMLHeadingElement;
+    videoText.textContent = text;
   }
 
   // 사용자가 유튜브 url을 가져오는 경우의 수

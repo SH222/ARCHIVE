@@ -1,20 +1,12 @@
 import { TextSectionInput } from "./components/dialog/input/text-input.js";
 import { MediaSectionInput } from "./components/dialog/input/media-input.js";
-import {
-  InputDialog,
-  MediaData,
-  TextData,
-} from "./components/dialog/dialog.js";
+import { InputDialog, MediaData, TextData } from "./components/dialog/dialog.js";
 import { TodoComponent } from "./components/page/item/todo.js";
 import { NoteComponent } from "./components/page/item/note.js";
 import { VideoComponent } from "./components/page/item/video.js";
 import { ImageComponent } from "./components/page/item/image.js";
 InputDialog;
-import {
-  Composable,
-  PageComponent,
-  PageItemComponent,
-} from "./components/page/page.js";
+import { Composable, PageComponent, PageItemComponent } from "./components/page/page.js";
 import { Component } from "./components/page/component.js";
 
 type InputComponentConstructor<T = (MediaData | TextData) & Component> = {
@@ -26,35 +18,16 @@ class App {
   constructor(appRoot: HTMLElement, private dialogRoot: HTMLElement) {
     this.page = new PageComponent(PageItemComponent);
     this.page.attachTo(appRoot);
-
-    // const image = new ImageComponent(
-    //   "Image Title",
-    //   "https://picsum.photos/600/300"
-    // );
-    // this.page.addChild(image);
-
-    // const video = new VideoComponent(
-    //   "Video Title",
-    //   "https://www.youtube.com/embed/8f2RkZqv1CA"
-    // );
-    // this.page.addChild(video);
-
-    // const note = new NoteComponent("Note Title", "Note Body");
-    // this.page.addChild(note);
-
-    // const todo = new TodoComponent("Todo Title", "Todo Item");
-    // this.page.addChild(todo);
-
     this.bindElementToDialog<MediaSectionInput>(
       "#new-image",
       MediaSectionInput,
-      (input: MediaSectionInput) => new ImageComponent(input.title, input.url)
+      (input: MediaSectionInput) => new ImageComponent(input.title, input.url, input.text)
     );
 
     this.bindElementToDialog<MediaSectionInput>(
       "#new-video",
       MediaSectionInput,
-      (input: MediaSectionInput) => new VideoComponent(input.title, input.url)
+      (input: MediaSectionInput) => new VideoComponent(input.title, input.url, input.text)
     );
 
     this.bindElementToDialog<TextSectionInput>(
@@ -71,31 +44,12 @@ class App {
 
     // For demo
     this.page.addChild(
-      new ImageComponent("Image Title", "https://picsum.photos/600/300")
+      new ImageComponent("첫번째 여행", "https://picsum.photos/600/300", `꼭 다시 가고 싶은 여행 모든 것이 완벽했던 일주일!`)
     );
-    this.page.addChild(
-      new VideoComponent(
-        "Video Title",
-        "https://www.youtube.com/embed/8f2RkZqv1CA"
-      )
-    );
-    this.page.addChild(
-      new NoteComponent("Note Title", "Don't forget to code your dream")
-    );
-    this.page.addChild(new TodoComponent("Todo Title", "TypeScript Course!"));
-    this.page.addChild(
-      new ImageComponent("Image Title", "https://picsum.photos/600/300")
-    );
-    this.page.addChild(
-      new VideoComponent(
-        "Video Title",
-        "https://www.youtube.com/embed/8f2RkZqv1CA"
-      )
-    );
-    this.page.addChild(
-      new NoteComponent("Note Title", "Don't forget to code your dream")
-    );
-    this.page.addChild(new TodoComponent("Todo Title", "TypeScript Course!"));
+    this.page.addChild(new VideoComponent("Playlist", "https://youtu.be/HfaIcB4Ogxk", "코딩하면서 듣기 좋은 음악!"));
+    this.page.addChild(new NoteComponent("Mark", "If I said I wasn't scared at all that would be a lie, but It's more like good scared."));
+    this.page.addChild(new TodoComponent("밀린 일기 쓰기", "10.20 ~ 10.24"));
+    this.page.addChild(new NoteComponent("Mark2", "I hope you like it where I am now."));
   }
 
   private bindElementToDialog<T extends (MediaData | TextData) & Component>(

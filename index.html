@@ -5,26 +5,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Motion</title>
+  <title>Archive</title>
   <link rel="stylesheet" href="./style/style.css">
   <script type="module" src="./dist/app.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <div class="app">
     <header class="banner">
-      <h1 class="banner__title">Motion</h1>
-      <ul class=" control-panel">
+      <div class="banner__title"><a href="/">ARCHIVE</a></div>
+      <div class="banner__button">
+        <button id="new-image" class="create-button">Image</button>
+        <button id="new-video" class="create-button">Video</button>
+        <button id="new-note" class="create-button">Note</button>
+        <button id="new-todo" class="create-button">Todo</button>
+      </div>
+      <!-- <ul class=" control-panel">
         <li><button id="new-image" class="create-button">Image</button></li>
         <li><button id="new-video" class="create-button">Video</button></li>
         <li><button id="new-note" class="create-button">Note</button></li>
         <li><button id="new-todo" class="create-button">Todo</button></li>
-      </ul>
+      </ul> -->
     </header>
     <main class="document"></main>
-    <footer class="footer">
+    <!-- <footer class="footer">
       <p>ⓒ Copyright by Dream Coding Academy. All rights reserved.</p>
-    </footer>
+    </footer> -->
   </div>
 </body>
 
