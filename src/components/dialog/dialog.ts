@@ -7,15 +7,13 @@ type OnSubmitListener = () => void;
 export interface MediaData {
   readonly title: string;
   readonly url: string;
+  readonly text: string;
 }
 export interface TextData {
   readonly title: string;
   readonly body: string;
 }
-export class InputDialog
-  extends BaseComponent<HTMLElement>
-  implements Composable
-{
+export class InputDialog extends BaseComponent<HTMLElement> implements Composable {
   closeListener?: OnCloseListener;
   submitListener?: OnSubmitListener;
   constructor() {
@@ -31,9 +29,7 @@ export class InputDialog
       this.closeListener && this.closeListener();
     };
 
-    const submitBtn = this.element.querySelector(
-      ".dialog__submit"
-    )! as HTMLElement;
+    const submitBtn = this.element.querySelector(".dialog__submit")! as HTMLElement;
     submitBtn.onclick = () => {
       this.submitListener && this.submitListener();
     };

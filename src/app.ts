@@ -46,7 +46,7 @@ class App {
     this.page.addChild(
       new ImageComponent("첫번째 여행", "https://picsum.photos/600/300", `꼭 다시 가고 싶은 여행 모든 것이 완벽했던 일주일!`)
     );
-    this.page.addChild(new VideoComponent("Playlist", "https://youtu.be/HfaIcB4Ogxk", "코딩하면서 듣기 좋은 음악!"));
+    this.page.addChild(new VideoComponent("Playlist", "https://youtu.be/HfaIcB4Ogxk", "코딩하면서 듣기 좋은 음악"));
     this.page.addChild(new NoteComponent("Mark", "If I said I wasn't scared at all that would be a lie, but It's more like good scared."));
     this.page.addChild(new TodoComponent("밀린 일기 쓰기", "10.20 ~ 10.24"));
     this.page.addChild(new NoteComponent("Mark2", "I hope you like it where I am now."));
