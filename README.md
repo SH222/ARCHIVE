@@ -1,6 +1,6 @@
 # ARCHIVE 
 
-### html, css, typescript, javascript
+### HTML, CSS, TypeScript, JavaScript
 ### 사용자의 사진, 영상, 메모, TODO를 기록하는 웹사이트
 
 <br/>
@@ -53,5 +53,3 @@
 - 용도에 따라 만든 컴포넌트를 interface로 분류(interface MediaData, interface TextData )하여 만들어놓은 dialog\_\_body에 넣음
 
 ### [Drag and Drop](https://developer.mozilla.org/ko/docs/Web/API/HTML_Drag_and_Drop_API)
-
-#### [드림코딩](https://academy.dream-coding.com/) - 타입스크립트 + 객체지향 프로그래밍 마스터
