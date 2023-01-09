@@ -1,8 +1,12 @@
-# ARCHIVE
+# ARCHIVE 
 
 ### html, css, typescript, javascript
+### 사용자의 사진, 영상, 메모, TODO를 기록하는 웹사이트
 
-### 프레임워크 / 라이브러리 없이 구현
+<br/>
+<p align="center"><img width="60%" src="https://user-images.githubusercontent.com/67587253/211256479-f3c67a91-a9a8-4b23-81ba-7b3c8b4f9028.gif"/></p>
+
+#### [ARCHIVE 바로가기](http://sh-portfolio.com/archive/index.html)
 
 <br/>
 
